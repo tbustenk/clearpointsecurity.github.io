@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clearpoint Cybersecurity & AI Consulting</title>
+    <title>Clearpoint AI & Cybersecurity Consulting</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #fafafa; }
         .container { max-width: 800px; margin: 0 auto; padding: 50px 20px; }
         header { margin-bottom: 50px; }
         .intro { display: flex; align-items: flex-start; gap: 30px; margin-bottom: 40px; }
-        .avatar { width: 120px; height: 120px; background: #0066cc; border-radius: 50%; flex-shrink: 0; }
+        .avatar { width: 140px; height: 140px; background: #0066cc; border-radius: 8px; flex-shrink: 0; overflow: hidden; }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
         .intro-text h1 { font-size: 2em; margin-bottom: 10px; }
         .intro-text p { font-size: 1.1em; color: #666; margin-bottom: 8px; }
         .intro-text .title { color: #0066cc; font-weight: 600; }
         section { margin: 50px 0; }
         h2 { font-size: 1.4em; margin-bottom: 15px; color: #0066cc; }
+        h3 { font-size: 1.1em; margin-top: 20px; margin-bottom: 10px; color: #333; font-weight: 600; }
         p { margin-bottom: 15px; line-height: 1.8; }
         .highlight { background: #f0f4ff; padding: 20px; border-left: 4px solid #0066cc; margin: 20px 0; }
+        .service-box { background: #f9f9f9; padding: 18px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #0066cc; }
+        .service-box h3 { margin-top: 0; }
+        .service-box p { margin-bottom: 10px; }
         .cta { background: #0066cc; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-weight: 600; }
         .cta:hover { background: #0052a3; }
         footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 0.9em; }
@@ -30,7 +35,9 @@
     <div class="container">
         <header>
             <div class="intro">
-                <div class="avatar"></div>
+                <div class="avatar">
+                    <img src="your-photo.jpg" alt="Kenzie Butts" />
+                </div>
                 <div class="intro-text">
                     <h1>Kenzie Butts</h1>
                     <p class="title">Founder & Principal Consultant</p>
@@ -41,31 +48,61 @@
         </header>
 
         <section>
-            <h2>What I Do</h2>
-            <p>I work with enterprise security and ops teams to identify opportunities for AI and automation that save time, reduce errors, and improve security outcomes.</p>
-            <p></p>
+            <h2>About</h2>
+            <section>
+    <h2>About</h2>
+    <p>I'm a cybersecurity specialist working at a major financial institution.</p>
+    <p>I create custom software solutions tailored to your specific pain points. No one size fits all products, but real solutions built by someone who lives in security.</p>
+    <p>My goal: help your team spend less time on noise and more time on actual threats.</p>
+        </section>
+
+        <section>
+            <h2>Services</h2>
+            
+            <div class="service-box">
+                <h3>Alert Analysis & False Positive Reduction</h3>
+                <p>AlertTriage uses AI to analyze security alerts and identify false positives, freeing analysts to focus on real threats.</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Reduces alert review workload by 30-40%</li>
+                    <li>Privacy-first: data anonymized before processing</li>
+                    <li>Custom per-environment (learns from your data)</li>
+                </ul>
+                <p style="margin-top: 10px;"><a href="https://github.com/clearpointsecurity/alerttriage" target="_blank">View AlertTriage on GitHub →</a></p>
+            </div>
+
+            <div class="service-box">
+                <h3>Custom AI Automation</h3>
+                <p>Beyond alerts, I build AI solutions for your specific pain points. Recent examples:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Automated threat intelligence analysis</li>
+                    <li>Log analysis and anomaly detection</li>
+                    <li>Compliance report automation</li>
+                    <li>Vulnerability assessment prioritization</li>
+                </ul>
+                <p style="margin-top: 10px; color: #666;"><em>Every solution is tailored to your environment and existing tools.</em></p>
+            </div>
+
+            <div class="service-box">
+                <h3>AI Adoption Strategy</h3>
+                <p>Not sure where to start with AI? I help organizations think through:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>What can actually be automated in your worflows</li>
+                    <li>Which tools fit your compliance requirements</li>
+                    <li>How to avoid hype and focus on ROI</li>
+                    <li>Risk assessment for AI implementations</li>
+                </ul>
+            </div>
+
             <div class="highlight">
                 <strong>My Approach:</strong> Understand your pain points → Design AI & security solutions tailored to your environment → Deploy, measure, and refine.
             </div>
         </section>
 
         <section>
-            <h2>Recent Work</h2>
-            <p><strong>AlertTriage</strong> — An AI system that analyzes security alerts and identifies false positives, freeing analysts to focus on real threats.</p>
-            <ul>
-                <li>Reduces alert review workload by 30-40%</li>
-                <li>Privacy-first: data anonymized before processing</li>
-                <li>Production-ready with full audit trails</li>
-            </ul>
-            <p><a href="https://github.com/tbustenk/clearpointsecurity.github.io" target="_blank">View on GitHub →</a></p>
-            <p style="margin-top: 20px; color: #666;"><em>AlertTriage is one example of custom AI solutions I build. Every engagement is tailored to your specific environment and challenges.</em></p>
-        </section>
-
-        <section>
             <h2>Who I Work With</h2>
             <ul>
-                <li>Enterprise security teams</li>
-                <li>Organizations looking to adopt AI strategically</li>
+                <li>Enterprise security teams drowning in alerts</li>
+                <li>Organizations exploring AI strategically</li>
                 <li>Teams that want AI solutions built by someone who understands security</li>
                 <li>Companies in regulated industries (financial services, healthcare, government)</li>
             </ul>
@@ -74,8 +111,8 @@
         <section>
             <h2>Let's Talk</h2>
             <p>If you're dealing with repetitive security work, alert fatigue, or exploring AI adoption, I'd like to understand your challenges.</p>
-            <p>No sales pitches, just a conversation about how I can help.</p>
-            <a href="mailto:kenzie@clearpointsecurity.org" class="cta">Schedule a complimentary 30 minute call</a>
+            <p>No sales pitch, just a conversation about what could be automated and how.</p>
+            <a href="mailto:kenzie@clearpointsecurity.org" class="cta">Schedule a complimentary 30-minute call</a>
         </section>
 
         <footer>

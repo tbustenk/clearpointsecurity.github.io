@@ -3,175 +3,612 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clearpoint AI & Cybersecurity Consulting</title>
+    <title>Clearpoint Security & AI Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #fafafa; }
-        .container { max-width: 800px; margin: 0 auto; padding: 50px 20px; }
-        header { margin-bottom: 50px; }
-        .intro { display: flex; align-items: flex-start; gap: 30px; margin-bottom: 40px; }
-        .avatar { width: 140px; height: 140px; background: #0066cc; border-radius: 8px; flex-shrink: 0; overflow: hidden; }
-        .avatar img { width: 100%; height: 100%; object-fit: cover; }
-        .intro-text h1 { font-size: 2em; margin-bottom: 10px; }
-        .intro-text p { font-size: 1.1em; color: #666; margin-bottom: 8px; }
-        .intro-text .title { color: #0066cc; font-weight: 600; }
-        section { margin: 50px 0; }
-        h2 { font-size: 1.4em; margin-bottom: 15px; color: #0066cc; }
-        h3 { font-size: 1.1em; margin-top: 20px; margin-bottom: 10px; color: #333; font-weight: 600; }
-        p { margin-bottom: 15px; line-height: 1.8; }
-        .highlight { background: #f0f4ff; padding: 20px; border-left: 4px solid #0066cc; margin: 20px 0; }
-        .service-box { background: #f9f9f9; padding: 18px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #0066cc; }
-        .service-box h3 { margin-top: 0; }
-        .service-box p { margin-bottom: 10px; }
-        .cta { background: #0066cc; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-weight: 600; }
-        .cta:hover { background: #0052a3; }
-        footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 0.9em; }
-        a { color: #0066cc; }
-        ul { margin: 15px 0 15px 20px; }
-        li { margin-bottom: 10px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e14;
+            --bg-light: #151b27;
+            --accent-blue: #00e5ff;
+            --accent-red: #ff3b5a;
+            --text-primary: #f0f4f9;
+            --text-secondary: #9ba8ba;
+            --border-color: #1f2937;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #0d1117 50%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            background: rgba(10, 14, 20, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            font-family: 'Space Mono', monospace;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 59, 90, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-highlight {
+            color: var(--accent-blue);
+            display: inline-block;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: linear-gradient(135deg, var(--accent-blue), #00f0ff);
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 229, 255, 0.25);
+        }
+
+        /* Products Section */
+        .products {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, rgba(21, 27, 39, 0.8) 0%, rgba(21, 27, 39, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 229, 255, 0.1);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-features li {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .product-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            padding: 0.85rem 2.2rem;
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1.5px solid var(--accent-blue);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(0, 229, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
+        }
+
+        /* Why Clearpoint */
+        .why-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, rgba(255, 59, 90, 0.05) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+        }
+
+        .why-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .why-item {
+            padding: 0;
+        }
+
+        .why-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .why-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* About */
+        .about {
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.03) 0%, rgba(255, 59, 90, 0.03) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+        }
+
+        .about h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .about p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .about p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(255, 59, 90, 0.08) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+        }
+
+        .final-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .final-cta p {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem 3rem;
+            margin-top: 8rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            color: var(--accent-red);
+        }
+
+        footer > p:last-child {
+            color: #6b7684;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .products, .why-section, .about, .final-cta {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1.5rem 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="intro">
-                <div class="avatar">
-                    <img src="your-photo.jpg" alt="Kenzie Butts" />
-                </div>
-                <div class="intro-text">
-                    <h1>Kenzie Butts</h1>
-                    <p class="title">Founder & Principal Consultant</p>
-                    <p>I help enterprise security teams reduce analyst fatigue, improve operational efficiency, and adopt AI strategically.</p>
-                    <p style="color: #999; font-size: 0.95em;">
-                        Cybersecurity specialist focused on security operations, AI-assisted workflow optimization, and practical security engineering.
-                    </p>
-                </div>
-            </div>
-        </header>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">Clearpoint Security & AI Consulting</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="mailto:kenzie@clearpointsecurity.org">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-        <section>
-            <h2>About</h2>
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Security Testing & <span class="hero-highlight">AI Automation</span></h1>
+        <p>Most security teams struggle with alert fatigue and detection gaps. I build practical solutions that help you reduce false positives in your SOC and find gaps in your DLP scanner before attackers exploit them.</p>
+        <a href="mailto:kenzie@clearpointsecurity.org?subject=Let's%20talk%20security" class="cta-primary">Schedule a call</a>
+    </section>
 
-            <p>
-                I’m a cybersecurity professional focused on security operations, AI-assisted workflow optimization, and practical security engineering.
-                My work centers on helping organizations reduce analyst fatigue, improve operational efficiency, and strengthen their security posture through intelligent automation and tailored security solutions.
-            </p>
+    <!-- About -->
+    <section class="about" id="about">
+        <h2>About</h2>
+            <p>Over the past 5 years, I've worked in security for large organizations and have seen the same problems come up repeatedly. Alert fatigue wastes thousands of hours every year across the industry, and DLP scanners often have detection gaps that nobody discovers until it's too late.</p>
+            <p>I built AlertTriage and Evadex to solve these problems directly. AlertTriage helps your team focus on real threats instead of false positives. Evadex helps you find and fix gaps in your DLP scanner before attackers do. Both are production ready and have been refined based on real world use.</p>
+    </section>
 
-            <p>
-                With experience supporting enterprise security environments, I specialize in identifying operational bottlenecks, improving alert triage workflows,
-                and developing AI-assisted tooling designed to help security teams focus on real threats instead of repetitive false positives.
-            </p>
-
-            <p>
-                My approach is grounded in practical, measurable outcomes.
-                I work closely with clients to understand their unique environment, operational challenges, and security goals in order to build solutions that integrate naturally into existing workflows and provide real business value.
-            </p>
-
-            <div class="highlight">
-                <strong>Areas of Focus:</strong><br><br>
-                • Security operations optimization<br>
-                • AI-assisted alert triage and analysis<br>
-                • Security automation and workflow improvement<br>
-                • Detection tuning and operational reporting<br>
-                • Cloud and enterprise security consulting
-            </div>
-        </section>
-
-        <section>
-            <h2>Services</h2>
-
-            <div class="service-box">
-                <h3>Alert Analysis & False Positive Reduction</h3>
-                <p>
-                    AlertTriage uses AI-assisted contextual analysis to help security teams reduce false positives and prioritize meaningful alerts.
-                </p>
-
-                <ul>
-                    <li>Reduces repetitive alert review workload</li>
-                    <li>Provides environment-specific contextual reasoning</li>
-                    <li>Generates actionable tuning recommendations</li>
-                    <li>Built to support analysts, not replace them</li>
+    <!-- Products -->
+    <section class="products" id="products">
+        <h2 class="section-title">Products</h2>
+        
+        <div class="product-grid">
+            <!-- AlertTriage -->
+            <div class="product-card" id="alerttriage">
+                <h3>AlertTriage</h3>
+                <p>AI-powered analysis of security alerts to identify false positives and reduce the noise that buries your SOC team. Works with any LLM model and learns from your environment over time to improve accuracy.</p>
+                <ul class="product-features">
+                    <li>Analyzes alerts using Claude, GPT, or your preferred LLM</li>
+                    <li>Learns from analyst feedback to improve over time</li>
+                    <li>Reduces false positive workload by 30-40% on average</li>
+                    <li>Privacy-first architecture with optional anonymization</li>
+                    <li>Integrates with Splunk, ELK, and other SIEM platforms</li>
                 </ul>
-
-                <p style="margin-top: 10px;">
-                    <a href="https://github.com/clearpointsecurity/alerttriage" target="_blank">
-                        View AlertTriage on GitHub →
-                    </a>
-                </p>
+                <a href="https://github.com/clearpointsecurity/alerttriage" class="cta-secondary">View on GitHub</a>
             </div>
 
-            <div class="service-box">
-                <h3>Custom AI Automation</h3>
-                <p>
-                    I develop tailored AI-assisted solutions designed around your specific operational pain points and existing workflows.
-                </p>
-
-                <ul>
-                    <li>Threat intelligence enrichment workflows</li>
-                    <li>Security log analysis and prioritization</li>
-                    <li>Operational reporting automation</li>
-                    <li>Workflow optimization and repetitive task reduction</li>
+            <!-- Evadex -->
+            <div class="product-card" id="evadex">
+                <h3>Evadex</h3>
+                <p>Test your DLP scanner's real-world effectiveness by generating hundreds of obfuscated variants of sensitive data and measuring what gets detected. Helps you find gaps in your detection coverage before attackers do.</p>
+                <ul class="product-features">
+                    <li>Generates 500+ obfuscation variants of sensitive values</li>
+                    <li>Tests through real file formats (DOCX, PDF, XLSX, etc.)</li>
+                    <li>Tests 13 different evasion technique families</li>
+                    <li>Works with any scanner that has a CLI interface</li>
+                    <li>Detailed reports showing detection gaps and coverage</li>
                 </ul>
-
-                <p style="margin-top: 10px; color: #666;">
-                    <em>Every solution is designed specifically for your environment and operational requirements.</em>
-                </p>
+                <a href="https://github.com/clearpointsecurity/evadex" class="cta-secondary">View on GitHub</a>
             </div>
+        </div>
+    </section>
 
-            <div class="service-box">
-                <h3>AI Adoption & Security Strategy</h3>
-                <p>
-                    Practical guidance for organizations exploring AI adoption within security and operational environments.
-                </p>
 
-                <ul>
-                    <li>AI workflow opportunity assessments</li>
-                    <li>Security-focused AI implementation guidance</li>
-                    <li>Risk evaluation and operational planning</li>
-                    <li>Practical ROI-focused automation strategy</li>
-                </ul>
+    <section class="why-section">
+        <h2>Why Work With Clearpoint</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <h4>Built by Someone in the Field</h4>
+                <p>I work in security every day, which means I understand the real constraints that teams face. I've seen what actually works in production environments and what sounds good on paper but falls apart in practice.</p>
             </div>
-
-            <div class="highlight">
-                <strong>My Approach:</strong>
-                Understand your operational pain points → Design practical AI & security solutions tailored to your environment → Deploy, measure, and continuously refine.
+            <div class="why-item">
+                <h4>Practical Solutions, Not Consulting Theater</h4>
+                <p>You get production-ready software that solves specific problems. I focus on building tools that work rather than writing lengthy reports that sit on shelves. Custom solutions are tailored to your actual environment and constraints.</p>
             </div>
-        </section>
+            <div class="why-item">
+                <h4>Results You Can Measure</h4>
+                <p>Whether it's hours saved in your SOC, false positives eliminated, or detection gaps closed, you'll be able to point to concrete improvements. ROI should be visible within the first month of engagement.</p>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Who I Work With</h2>
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to improve your security posture?</h2>
+        <p>Whether you're dealing with alert fatigue in your SOC or need to test your DLP coverage, I'd be happy to spend 15 minutes understanding your specific situation and discussing how I can help improve your security posture.</p>
+        <a href="mailto:kenzie@clearpointsecurity.org?subject=Let's%20talk%20security" class="cta-primary">Schedule a 15-minute call</a>
+    </section>
 
-            <ul>
-                <li>Security teams dealing with alert fatigue and operational overload</li>
-                <li>Organizations exploring practical AI adoption strategies</li>
-                <li>Teams looking to improve workflow efficiency and automation</li>
-                <li>Companies operating in regulated or high-security environments</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Let's Talk</h2>
-
-            <p>
-                If your team is struggling with repetitive security work, operational inefficiencies, or evaluating practical AI adoption opportunities,
-                I’d be happy to learn more about your environment and challenges.
-            </p>
-
-            <p>
-                No pressure — just a conversation about where intelligent automation and operational improvements may provide value.
-            </p>
-
-            <a href="mailto:kenzie@clearpointsecurity.org" class="cta">
-                Schedule a Complimentary 30-Minute Call
-            </a>
-        </section>
-
-        <footer>
-            <p>
-                &copy; 2026 Kenzie Butts. All rights reserved. |
-                <a href="https://github.com/tbustenk" target="_blank">GitHub</a>
-            </p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>Clearpoint Security & AI Consulting</p>
+        <div>
+            <a href="mailto:kenzie@clearpointsecurity.org">kenzie@clearpointsecurity.org</a>
+            <a href="https://github.com/tbustenk">GitHub</a>
+            <a href="https://www.linkedin.com/in/kenziebutts/">LinkedIn</a>
+        </div>
+        <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.85rem;">© 2026. Built with purpose.</p>
+    </footer>
 </body>
 </html>

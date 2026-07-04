@@ -174,6 +174,71 @@
             box-shadow: 0 15px 40px rgba(0, 229, 255, 0.25);
         }
 
+        /* Services Section */
+        .services {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(21, 27, 39, 0.8) 0%, rgba(21, 27, 39, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 229, 255, 0.1);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
         /* Products Section */
         .products {
             max-width: 1400px;
@@ -519,7 +584,8 @@
             <div class="logo">Clearpoint Security & AI Consulting</div>
             <nav>
                 <a href="#about">About</a>
-                <a href="#products">Products</a>
+                <a href="#services">Services</a>
+                <a href="#products">Work</a>
                 <a href="mailto:kenzie@clearpointsecurity.org">Contact</a>
             </nav>
         </div>
@@ -527,21 +593,42 @@
 
     <!-- Hero -->
     <section class="hero">
-        <h1>Security Testing & <span class="hero-highlight">AI Automation</span></h1>
-        <p>Most security teams struggle with alert fatigue and detection gaps. I build practical solutions that help you reduce false positives in your SOC and find gaps in your DLP scanner before attackers exploit them.</p>
-        <a href="mailto:kenzie@clearpointsecurity.org?subject=Let's%20talk%20security" class="cta-primary">Schedule a call</a>
+        <h1>Cybersecurity & <span class="hero-highlight">AI Automation</span> Consulting</h1>
+        <p>We help organizations adopt AI securely and bring enhanced capability to their security operations. Whether you're exploring how AI can enhance your operations or managing active security challenges, we bring practical expertise to both.</p>
+        <a href="mailto:kenzie@clearpointsecurity.org?subject=Let's%20talk%20about%20AI%20and%20security" class="cta-primary">Schedule a call</a>
     </section>
 
     <!-- About -->
     <section class="about" id="about">
         <h2>About</h2>
-            <p>Over the past 5 years, I've worked in security for large organizations and have seen the same problems come up repeatedly. Alert fatigue wastes thousands of hours every year across the industry, and DLP scanners often have detection gaps that nobody discovers until it's too late.</p>
-            <p>I built AlertTriage and Evadex to solve these problems directly. AlertTriage helps your team focus on real threats instead of false positives. Evadex helps you find and fix gaps in your DLP scanner before attackers do. Both are production ready and have been refined based on real world use.</p>
+            <p>Over the past 5 years, I've worked in security for large organizations and have seen where AI creates real advantages. Most companies face one of two problems: they're uncertain how to adopt AI safely, or they have security challenges that could be solved faster and better with AI.</p>
+            <p>At Clearpoint, we focus on the intersection of these two. We help organizations adopt AI securely—with proper governance, risk controls, and compliance. We also help security teams reduce manual work and improve detection using machine learning. Whether you're exploring AI capability or managing active security challenges, we bring hands-on expertise to both.</p>
+            <p>I've built tools like AlertTriage and Evadex to prove what's possible. But our core offering is custom consulting: understanding your specific situation and building solutions that actually move the needle.</p>
     </section>
 
-    <!-- Products -->
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2 class="section-title">How We Work</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Adopt AI Securely</h3>
+                <p>We help your organization deploy and use AI safely. Governance frameworks, risk assessment, security controls, compliance integration. AI capability without the security debt.</p>
+            </div>
+            <div class="service-card">
+                <h3>Security Automation with AI</h3>
+                <p>We identify and automate manual security work using machine learning and AI. Alert triage, threat scoring, anomaly detection. Focus your team on what matters.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Security Tools</h3>
+                <p>We build production-ready tools that solve your specific problems. Whether it's detection optimization, alert analysis, or security workflow automation. Built by someone who understands both security and AI.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Work -->
     <section class="products" id="products">
-        <h2 class="section-title">Products</h2>
+        <h2 class="section-title">Example Work</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">These are tools we've built to solve real problems at the intersection of security and AI. They show what's possible—we can build similar custom solutions for your specific challenges.</p>
         
         <div class="product-grid">
             <!-- AlertTriage -->
@@ -576,28 +663,28 @@
 
 
     <section class="why-section">
-        <h2>Why Work With Clearpoint</h2>
+        <h2>Why Clearpoint</h2>
         <div class="why-grid">
             <div class="why-item">
-                <h4>Built by Someone in the Field</h4>
-                <p>I work in security every day, which means I understand the real constraints that teams face. I've seen what actually works in production environments and what sounds good on paper but falls apart in practice.</p>
+                <h4>Security and AI, Not Just One</h4>
+                <p>Most consultants specialize in either security or AI. We work at the intersection—we understand both the technical depth of security systems and how to apply machine learning effectively. You get perspective from both sides.</p>
             </div>
             <div class="why-item">
-                <h4>Practical Solutions, Not Consulting Theater</h4>
-                <p>You get production-ready software that solves specific problems. I focus on building tools that work rather than writing lengthy reports that sit on shelves. Custom solutions are tailored to your actual environment and constraints.</p>
+                <h4>Built on Real World Experience</h4>
+                <p>I've spent years in large organizations dealing with actual security challenges. I know what works, what's overhyped, and where AI can actually move the needle. We bring that perspective to everything we build and recommend.</p>
             </div>
             <div class="why-item">
-                <h4>Results You Can Measure</h4>
-                <p>Whether it's hours saved in your SOC, false positives eliminated, or detection gaps closed, you'll be able to point to concrete improvements. ROI should be visible within the first month of engagement.</p>
+                <h4>Measurable Outcomes</h4>
+                <p>Whether it's time saved, false positives eliminated, or faster threat detection, you'll see concrete improvements. We focus on building solutions that actually work in production, not impressive prototypes.</p>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
     <section class="final-cta">
-        <h2>Ready to improve your security posture?</h2>
-        <p>Whether you're dealing with alert fatigue in your SOC or need to test your DLP coverage, I'd be happy to spend 15 minutes understanding your specific situation and discussing how I can help improve your security posture.</p>
-        <a href="mailto:kenzie@clearpointsecurity.org?subject=Let's%20talk%20security" class="cta-primary">Schedule a 15-minute call</a>
+        <h2>Ready to explore AI and security together?</h2>
+        <p>Whether you're trying to secure your AI adoption or automate security with machine learning, we'd be happy to spend 15 minutes understanding your challenge and discussing how we can help.</p>
+        <a href="mailto:kenzie@clearpointsecurity.org?subject=Let's%20talk%20about%20AI%20and%20security" class="cta-primary">Schedule a 15-minute call</a>
     </section>
 
     <!-- Footer -->
